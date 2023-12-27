@@ -8,16 +8,16 @@ namespace Notes.Application.Notes.Commands.UpdateNote;
 
 public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand>
 {
-    private readonly INotesDbContext _dbContext;
+    private readonly INotesDbContext dbContext;
 
     public UpdateNoteCommandHandler(INotesDbContext dbContext)
     {
-        _dbContext = dbContext;
+        this.dbContext = dbContext;
     }
 
     public async Task Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
     {
-        Note? entity = await _dbContext.Notes
+        Note? entity = await dbContext.Notes
             .FirstOrDefaultAsync(note => note.ID == request.ID, cancellationToken);
         
         if (entity == null || entity.UserID != request.UserID)
@@ -29,6 +29,6 @@ public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand>
         entity.Details = request.Details;
         entity.EditDate = DateTime.Now;
         
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        await dbContext.SaveChangesAsync(cancellationToken);
     }
 }

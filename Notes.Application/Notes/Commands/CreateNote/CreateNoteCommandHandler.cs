@@ -6,11 +6,11 @@ namespace Notes.Application.Notes.Commands.CreateNote;
 
 public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Guid>
 {
-    private readonly INotesDbContext _dbContext;
+    private readonly INotesDbContext dbContext;
 
     public CreateNoteCommandHandler(INotesDbContext dbContext)
     {
-        _dbContext = dbContext;
+        this.dbContext = dbContext;
     }
 
     public async Task<Guid> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
@@ -25,8 +25,8 @@ public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Guid>
             EditDate = null
         };
         
-        await _dbContext.Notes.AddAsync(note, cancellationToken);
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        await dbContext.Notes.AddAsync(note, cancellationToken);
+        await dbContext.SaveChangesAsync(cancellationToken);
         
         return note.ID;
     }
