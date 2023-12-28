@@ -6,23 +6,25 @@ using Notes.Persistence;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAutoMapper(config =>
+IServiceCollection services = builder.Services;
+ConfigurationManager configuration = builder.Configuration;
+
+
+// string? environmentContentRootPath = Assembly.GetEntryAssembly()?.Location;
+// if (environmentContentRootPath != null)
+//     builder.Environment.ContentRootPath = environmentContentRootPath;
+
+services.AddAutoMapper(config =>
 {
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
     config.AddProfile(new AssemblyMappingProfile(typeof(INotesDbContext).Assembly));
 });
 
-ConfigurationManager configuration = builder.Configuration;
+services.AddApplication();
+services.AddPersistence(configuration);
+services.AddControllers();
 
-string? environmentContentRootPath = Assembly.GetEntryAssembly()?.Location;
-if (environmentContentRootPath != null)
-    builder.Environment.ContentRootPath = environmentContentRootPath;
-
-builder.Services.AddApplication();
-builder.Services.AddPersistence(configuration);
-builder.Services.AddControllers();
-
-builder.Services.AddCors(options =>
+services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
@@ -33,22 +35,6 @@ builder.Services.AddCors(options =>
 });
 
 WebApplication app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseRouting();
-app.UseHttpsRedirection();
-app.UseCors("AllowAll");
-
-app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 using (IServiceScope scope = app.Services.CreateScope())
 {
@@ -64,6 +50,24 @@ using (IServiceScope scope = app.Services.CreateScope())
         throw;
     }
 }
+
+// if (app.Environment.IsDevelopment())
+// {
+//     app.UseDeveloperExceptionPage();
+// }
+// else
+// {
+//     app.UseExceptionHandler("/Home/Error");
+//     app.UseHsts();
+// }
+
+app.UseRouting();
+app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+
 
 app.MapGet("/", () => "Hello World!");
 
