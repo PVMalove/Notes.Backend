@@ -66,3 +66,5 @@ C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\obj\Debug\net8
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\obj\Debug\net8.0\Notes.WebApi.csproj.CopyComplete
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Notes.WebApi.xml
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

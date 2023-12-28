@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "16KYC6+m/9b5gZtU8EDl8wF1PObucM30xsyVtxiXsVPuBsZTVuKiyzqnsQ8fBDIIOPXNpPpevafgm4ioflfO8Q==",
+  "dgSpecHash": "9IZHfiVugiGs1NkftxViQIpkEO98/Hr+mfMl7dSiqrvpIaAMNwHIDYHT7dfsHXa9FOo6c6A1i+zdhplUNXWTWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Malove\\ASP.NET_Projects\\Notes\\Notes.Backend\\Notes.Application\\Notes.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Malove\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Malove\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Malove\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -9,11 +9,6 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 IServiceCollection services = builder.Services;
 ConfigurationManager configuration = builder.Configuration;
 
-
-// string? environmentContentRootPath = Assembly.GetEntryAssembly()?.Location;
-// if (environmentContentRootPath != null)
-//     builder.Environment.ContentRootPath = environmentContentRootPath;
-
 services.AddAutoMapper(config =>
 {
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
@@ -51,15 +46,16 @@ using (IServiceScope scope = app.Services.CreateScope())
     }
 }
 
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseDeveloperExceptionPage();
-// }
-// else
-// {
-//     app.UseExceptionHandler("/Home/Error");
-//     app.UseHsts();
-// }
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
 
 app.UseRouting();
 app.UseHttpsRedirection();
