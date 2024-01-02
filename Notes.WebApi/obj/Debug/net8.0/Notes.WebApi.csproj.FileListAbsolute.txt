@@ -68,3 +68,11 @@ C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Notes.WebApi.xml
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

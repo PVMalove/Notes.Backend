@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Notes.Application.Notes.Commands.CreateNote;
 using Notes.Application.Notes.Commands.DeleteNote;
@@ -20,6 +21,7 @@ public class NoteController : BaseController
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<NoteListViewModel>> GetAll()
     {
         GetNoteListQuery query = new GetNoteListQuery { UserID = UserID };
@@ -28,6 +30,7 @@ public class NoteController : BaseController
     }
 
     [HttpGet("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult<NoteDetailsViewModel>> Get(Guid id)
     {
         GetNoteDetailsQuery query = new GetNoteDetailsQuery { ID = id, UserID = UserID };
@@ -36,6 +39,7 @@ public class NoteController : BaseController
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<Guid>> Create([FromBody] CreateNoteDTO command)
     {
         var mappedCommand = mapper.Map<CreateNoteCommand>(command);
@@ -45,6 +49,7 @@ public class NoteController : BaseController
     }
 
     [HttpPut]
+    [Authorize]
     public async Task<ActionResult> Update([FromBody] UpdateNoteDTO command)
     {
         UpdateNoteCommand? mappedCommand = mapper.Map<UpdateNoteCommand>(command);
@@ -54,6 +59,7 @@ public class NoteController : BaseController
     }
 
     [HttpDelete("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult> Delete(Guid id)
     {
         DeleteNoteCommand command = new DeleteNoteCommand
