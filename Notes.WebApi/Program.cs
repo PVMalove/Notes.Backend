@@ -43,6 +43,13 @@ services.AddAuthentication(config =>
         options.RequireHttpsMetadata = false;
     });
 
+services.AddSwaggerGen(config =>
+{
+    string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    config.IncludeXmlComments(xmlPath);
+});
+
 WebApplication app = builder.Build();
 
 using (IServiceScope scope = app.Services.CreateScope())
@@ -70,6 +77,12 @@ else
     app.UseHsts();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI(config =>
+{
+    config.RoutePrefix = String.Empty;
+    config.SwaggerEndpoint("/swagger/v1/swagger.json", "Notes.WebApi");
+});
 app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
@@ -77,9 +90,5 @@ app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
-
-
-app.MapGet("/", () => "Hello World!");
 
 app.Run();
