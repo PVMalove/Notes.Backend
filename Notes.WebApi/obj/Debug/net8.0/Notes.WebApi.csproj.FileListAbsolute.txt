@@ -81,3 +81,7 @@ C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\obj\Debug\net8.0\Notes.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\Malove\ASP.NET_Projects\Notes\Notes.Backend\Notes.WebApi\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll

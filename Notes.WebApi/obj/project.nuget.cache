@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qBctVRwODDkZtSNBiKODkTDGBzYms9rkjvsLYAJBDd0vBhCo2cllPREUhCfcLqpbEjGV2vf4j7jmY6w+ejgFhQ==",
+  "dgSpecHash": "XWyYUHFsO2T0UoiN1Ku/1hK8SADoRGQkKHEsz19/UNK4LzkjbuaaTgetE5r+x0OgR4vIcPB88ymGmnTyWCJC0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Malove\\ASP.NET_Projects\\Notes\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Malove\\.nuget\\packages\\asp.versioning.abstractions\\8.0.0\\asp.versioning.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Malove\\.nuget\\packages\\asp.versioning.http\\8.0.0\\asp.versioning.http.8.0.0.nupkg.sha512",
+    "C:\\Users\\Malove\\.nuget\\packages\\asp.versioning.mvc\\8.0.0\\asp.versioning.mvc.8.0.0.nupkg.sha512",
+    "C:\\Users\\Malove\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.0.0\\asp.versioning.mvc.apiexplorer.8.0.0.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Malove\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",

@@ -3,6 +3,10 @@
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">INFO</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/Storage/@EntryValue">Solution</s:String>
 	<s:Boolean x:Key="/Default/CodeInspection/Roslyn/RoslynEnabled/@EntryValue">False</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Malove\.nuget\packages\asp.versioning.mvc\8.0.0\lib\net8.0\Asp.Versioning.Mvc.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Malove\.nuget\packages\asp.versioning.http\8.0.0\lib\net8.0\Asp.Versioning.Http.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da7953bd_002D3a76_002D4f64_002Da879_002D96d28da3e4f9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>

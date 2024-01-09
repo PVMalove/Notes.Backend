@@ -1,10 +1,14 @@
 using System.Reflection;
+using Asp.Versioning.ApiExplorer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Options;
 using Notes.Application;
 using Notes.Application.Common.Mappings;
 using Notes.Application.Interfaces;
 using Notes.Persistence;
+using Notes.WebApi;
 using Notes.WebApi.Middleware;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -43,12 +47,17 @@ services.AddAuthentication(config =>
         options.RequireHttpsMetadata = false;
     });
 
-services.AddSwaggerGen(config =>
-{
-    string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    config.IncludeXmlComments(xmlPath);
-});
+// services.AddSwaggerGen(config =>
+// {
+//     string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+//     string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+//     config.IncludeXmlComments(xmlPath);
+// });
+
+services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+services.AddSwaggerGen();
+services.AddApiVersioning().AddApiExplorer(options => options.GroupNameFormat = "'v'VVV");
+
 
 WebApplication app = builder.Build();
 
@@ -77,12 +86,18 @@ else
     app.UseHsts();
 }
 
+IApiVersionDescriptionProvider apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 app.UseSwagger();
 app.UseSwaggerUI(config =>
 {
-    config.RoutePrefix = String.Empty;
-    config.SwaggerEndpoint("/swagger/v1/swagger.json", "Notes.WebApi");
+    foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions.Reverse())
+    {
+        config.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+            description.GroupName.ToUpperInvariant());
+        config.RoutePrefix = String.Empty;
+    }
 });
+
 app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
