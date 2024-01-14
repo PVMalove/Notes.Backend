@@ -23,25 +23,23 @@ public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
             options.SwaggerDoc(description.GroupName, new OpenApiInfo
             {
                 Version = apiVersion,
-                Title = $"Notes Web {apiVersion}",
+                Title = $"Notes Api {apiVersion}",
                 Description = "An ASP.NET Core Web API for managing notes.",
                 Contact = new OpenApiContact
                 {
                     Name = "Malove",
                     Email = string.Empty,
                     Url = new Uri("https://t.me/maloveee"),
-                },
-                License = new OpenApiLicense
-                {
-                    Name = "MIT",
                 }
             });
 
-            options.AddSecurityDefinition($"AuthToken {apiVersion}", new OpenApiSecurityScheme
+            options.AddSecurityDefinition($"AuthToken {apiVersion}",
+                new OpenApiSecurityScheme
             {
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,
                 BearerFormat = "JWT",
+                Scheme = "bearer",
                 Name = "Authorization",
                 Description =
                     "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",

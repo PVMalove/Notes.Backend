@@ -8,6 +8,7 @@ using Notes.Application.Interfaces;
 using Notes.Persistence;
 using Notes.WebApi;
 using Notes.WebApi.Middleware;
+using Notes.WebApi.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -47,17 +48,12 @@ services.AddAuthentication(config =>
         options.RequireHttpsMetadata = false;
     });
 
-// services.AddSwaggerGen(config =>
-// {
-//     string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-//     string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-//     config.IncludeXmlComments(xmlPath);
-// });
-
 services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 services.AddSwaggerGen();
 services.AddApiVersioning().AddApiExplorer(options => options.GroupNameFormat = "'v'VVV");
 
+// services.AddSingleton<ICurrentUserService, CurrentUserService>();
+// services.AddHttpContextAccessor();
 
 WebApplication app = builder.Build();
 
