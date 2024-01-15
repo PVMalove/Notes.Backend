@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations;
 using AutoMapper;
+using System.ComponentModel.DataAnnotations;
 using Notes.Application.Common.Mappings;
 using Notes.Application.Notes.Commands.CreateNote;
 
@@ -7,7 +7,7 @@ namespace Notes.WebApi.Model;
 
 public class CreateNoteDTO : IMapWith<CreateNoteCommand>
 {
-    [Required]
+    [Required] 
     public string Title { get; set; } = default!;
     public string Details { get; set; } = default!;
 

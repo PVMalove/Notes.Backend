@@ -91,8 +91,8 @@ public class NoteController : BaseController
     {
         var mappedCommand = mapper.Map<CreateNoteCommand>(command);
         mappedCommand.UserID = UserID;
-        object? noteId = await Mediator?.Send(command)!;
-        return Ok(noteId);
+        var noteId = await Mediator?.Send(mappedCommand)!;
+        return Created($"{Request.Path}/{noteId}", noteId);
     }
 
     /// <summary>

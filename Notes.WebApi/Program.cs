@@ -8,7 +8,6 @@ using Notes.Application.Interfaces;
 using Notes.Persistence;
 using Notes.WebApi;
 using Notes.WebApi.Middleware;
-using Notes.WebApi.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -43,7 +42,7 @@ services.AddAuthentication(config =>
 })
     .AddJwtBearer("Bearer", options =>
     {
-        options.Authority = "https://localhost:7014";
+        options.Authority = "https://localhost:7243/";
         options.Audience = "NotesWebApi";
         options.RequireHttpsMetadata = false;
     });
